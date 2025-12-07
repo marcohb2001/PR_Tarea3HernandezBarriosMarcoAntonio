@@ -2,4 +2,19 @@
     <string name="app_name">PR_Tarea3HernandezBarriosMarcoAntonio</string>
     <string name="titulo_principal">Nubo Supermarket</string>
     <string name="logo_desc">Logo del supermercado</string>
+    <string name="EncabezadoTablaNombre">Nombre</string>
+    <string name="precio">Precio</string>
+    <string name="descripcionEstado">Disponibilidad</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="insertar_producto">Insertar Producto</string>
+    <string name="eliminar_producto">Eliminar Producto</string>
+    <string name="preferencia1">Mostrar solo productos disponibles</string>
+    <string name="nombre_del_producto">Nombre del producto</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="peso">Peso neto en gramos</string>
+    <string name="disponible">Disponible</string>
+    <string name="guardar_producto">Guardar producto</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="guardar_cambios">Guardar cambios</string>
+    <string name="volver">Volver</string>
 </resources>
