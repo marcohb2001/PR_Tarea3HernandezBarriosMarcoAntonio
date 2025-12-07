@@ -2,18 +2,14 @@ package com.marcoantonio.hernandezbarrios.pr_tarea3hernandezbarriosmarcoantonio;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 /**
  * Pantalla de Preferencias de la aplicación.
- *
  * Actualmente solo gestiona un ajuste:
  *  - Mostrar únicamente los productos disponibles en el listado.
- *
  * La preferencia se guarda mediante SharedPreferences para que
  * el usuario la conserve incluso al cerrar la aplicación.
  */
@@ -23,7 +19,6 @@ public class Preferencias extends AppCompatActivity {
     private static final String CLAVE_SOLO_DISPONIBLES = "soloDisponibles";
 
     private SharedPreferences prefs;
-    private SwitchCompat swSoloDisponibles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +27,12 @@ public class Preferencias extends AppCompatActivity {
 
         prefs = getSharedPreferences(NOMBRE_PREFS, MODE_PRIVATE);
 
-        swSoloDisponibles = findViewById(R.id.swSoloDisponibles);
+        SwitchCompat swSoloDisponibles = findViewById(R.id.swSoloDisponibles);
 
         boolean estadoGuardado = prefs.getBoolean(CLAVE_SOLO_DISPONIBLES, false);
         swSoloDisponibles.setChecked(estadoGuardado);
 
-        swSoloDisponibles.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            guardarPreferencia(isChecked);
-        });
+        swSoloDisponibles.setOnCheckedChangeListener((buttonView, isChecked) -> guardarPreferencia(isChecked));
     }
 
     /**
