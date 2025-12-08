@@ -2,9 +2,11 @@ package com.marcoantonio.hernandezbarrios.pr_tarea3hernandezbarriosmarcoantonio;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
 
 /**
  * Pantalla de Preferencias de la aplicación.
@@ -24,6 +26,12 @@ public class Preferencias extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preferencias);
+
+        Toolbar toolbar = findViewById(R.id.toolbarPreferences);
+        setSupportActionBar(toolbar);
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         prefs = getSharedPreferences(NOMBRE_PREFS, MODE_PRIVATE);
 
@@ -55,5 +63,14 @@ public class Preferencias extends AppCompatActivity {
     public static boolean getSoloDisponibles(android.content.Context context) {
         SharedPreferences p = context.getSharedPreferences(NOMBRE_PREFS, MODE_PRIVATE);
         return p.getBoolean(CLAVE_SOLO_DISPONIBLES, false);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            getOnBackPressedDispatcher().onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

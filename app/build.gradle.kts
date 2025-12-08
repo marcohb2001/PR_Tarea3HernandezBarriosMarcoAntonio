@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.marcoantonio.hernandezbarrios.pr_tarea3hernandezbarriosmarcoantonio"
-        minSdk = 24
+        minSdk = 23
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
